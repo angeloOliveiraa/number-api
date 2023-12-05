@@ -1,0 +1,33 @@
+{
+  "configs": [
+    "Fluxos/num-tipo.xml",
+    "Fluxos/num-declarado.xml",
+    "global.xml",
+    "numbers-api.xml",
+    "Fluxos/num-aleatorio.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "2c02bea9-f223-4feb-beee-35b5c66fcb6d:api-number:1.0.0",
+  "minMuleVersion": "4.4.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "application-types.xml",
+        "Fluxos/num-aleatorio.xml",
+        "Fluxos/num-declarado.xml",
+        "Fluxos/num-tipo.xml",
+        "global.xml",
+        "log4j2.xml",
+        "numbers-api.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

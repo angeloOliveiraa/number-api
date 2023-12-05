@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_translate" doc:name="HTTP Request configuration" doc:id="2dff7788-3755-4c4a-b652-80f0b16213ec" >
+		<http:request-connection host="www.worldlingo.com" protocol="HTTPS" port="443"/>
+	</http:request-config>
+	<flow name="get:\numero\(id):numbers-api-config" doc:id="ea9525be-96d9-484a-942f-2326305a50de" >
+		<http:request method="GET" doc:name="Request" doc:id="088f24c2-a65f-46d1-8360-f990ed17b38b" config-ref="HTTP_Request_configuration" path='/{id}'>
+			<http:uri-params><![CDATA[#[output application/java
+---
+{
+	'id' : attributes.uriParams.'id'
+}]]]></http:uri-params>
+		</http:request>
+	</flow>
+</mule>
